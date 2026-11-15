@@ -38,12 +38,40 @@ footer{text-align:center;padding:62px 20px 36px;background:#17050d;border-top:1p
 .event .details:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.22;background:radial-gradient(ellipse at 82% 35%,#e4c995 0,transparent 42%),repeating-linear-gradient(135deg,transparent 0 18px,#c5a36c22 19px 20px)}
 .event.open .details{max-height:220px;min-height:150px;padding:26px 30px 28px 102px}
 @media(max-width:700px){.event button{min-height:116px;padding:15px}.event.open .details{min-height:160px;padding:24px 20px 26px 82px}}
+
+/* Approved royal cover and invitation-opening journey */
+body:not(.invitation-open) .nav,body:not(.invitation-open) main > :not(.hero),body:not(.invitation-open) footer,body:not(.invitation-open) .music{display:none}
+body.invitation-open .hero{display:none}
+.hero{min-height:100svh;padding:16px;background:radial-gradient(ellipse at 50% 40%,#86314a88,transparent 65%),#230812}
+.hero .frame{width:min(650px,100%);min-height:min(790px,calc(100svh - 32px));padding:18px 14px 25px;display:flex;align-items:center;flex-direction:column;border-color:#e5c58c99;outline-color:#e5c58c33;box-shadow:0 20px 80px #080104,inset 0 0 65px #a05a4c17}
+.hero .frame:before,.hero .frame:after{content:none}
+.corner-star{position:absolute;top:17px;color:#e5c58c;font-size:17px}.corner-star-left{left:21px}.corner-star-right{right:21px}
+.hero .kicker{font-size:clamp(8px,2vw,10px);letter-spacing:.19em;color:#e5c58c;text-align:center;margin:10px 22px 25px}
+.hero .arch{width:min(470px,100%);flex:1;min-height:0;border-color:#e5c58c;border-radius:250px 250px 0 0;padding:8px;background:linear-gradient(180deg,#72314966,#270915);box-shadow:inset 0 0 30px #070105}
+.hero .arch-inner{height:100%;min-height:0;border-color:#e5c58c66;border-radius:240px 240px 0 0;display:flex;align-items:center;flex-direction:column;text-align:center;padding:clamp(60px,12vw,88px) 12px 20px}
+.hero .eyebrow{color:#e5c58c}.hero h1{font:500 clamp(66px,13vw,100px)/.74 var(--serif);letter-spacing:-.04em;margin:35px 0 24px}
+.hero h1 i{font-size:.43em;color:#e5c58c;line-height:1.55}
+.hero .flourish{color:#e5c58c;font-size:20px}.hero .tagline{font:italic clamp(16px,4vw,19px) var(--serif);margin:12px 0 23px}
+.hero .date{color:#e5c58c;letter-spacing:.17em;font-size:clamp(10px,2.8vw,13px)}.hero .place{color:#d4bca6;font-size:9px;letter-spacing:.32em;margin:12px 0 22px}
+.hero .open-invite{width:min(300px,100%);max-width:100%;height:auto;min-height:142px;background:linear-gradient(135deg,#7e354f,#310d20);border:2px solid #e5c58c;color:#fff0d7;box-shadow:0 0 0 5px #e5c58c22,0 0 30px #e5c58c40;gap:10px;animation:none}
+.hero .open-invite small{position:relative;z-index:2;color:#ffe5b9;font-size:9px;letter-spacing:.16em;font-weight:500;text-shadow:none}
+.hero .open-invite .seal{position:relative;z-index:2;width:51px;height:51px;border:1px solid #e5c58c;border-radius:50%;background:#270914;display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px #e5c58c55}
+.hero .seal b{font:500 20px var(--serif);letter-spacing:-.05em;white-space:nowrap;transform:translateY(-1px)}.hero .seal i{font-style:italic;color:#e5c58c;font-size:.78em}
+.hero .open-invite .door{display:none}.hero .micro{font:italic 14px var(--serif);color:#d0aa9e;margin:15px 0 0}
+.invitation-transition{position:fixed;inset:0;display:none;perspective:1000px;z-index:30;pointer-events:none}
+.invitation-transition.active{display:flex}
+.invitation-panel{width:50%;height:100%;background:linear-gradient(120deg,#6b2b42,#260817);border:2px solid #e5c58c;box-shadow:inset 0 0 90px #10020a;transform-origin:left;animation:invitation-left-open 1.45s ease-in-out forwards}
+.invitation-panel.right{transform-origin:right;background:linear-gradient(240deg,#6b2b42,#260817);animation:invitation-right-open 1.45s ease-in-out forwards}
+@keyframes invitation-left-open{from{transform:rotateY(0)}to{transform:rotateY(-110deg)}}
+@keyframes invitation-right-open{from{transform:rotateY(0)}to{transform:rotateY(110deg)}}
+@media(max-width:420px){.hero .frame{padding-inline:10px}.hero .kicker{margin-bottom:20px}.hero .arch-inner{padding-top:65px}.hero h1{margin-top:28px;margin-bottom:17px}.hero .tagline{margin-bottom:18px}.hero .place{margin-bottom:17px}.hero .open-invite{min-height:130px}.hero .micro{margin-top:12px}}
+@media(prefers-reduced-motion:reduce){.invitation-panel,.invitation-panel.right{animation-duration:.01ms}}
 </style>
 </head>
 <body>
 <header class="nav"><a class="brand" href="#home">A <i>&</i> M</a><nav id="nav"><a href="#celebrations">Celebrations</a><a href="#story">Our story</a><a href="#venue">Venue</a><a href="#rsvp">RSVP</a></nav><div><button class="lang" id="lang">हिंदी</button><button class="menu-btn" id="menu" aria-label="Open menu">☰</button></div></header>
 <main>
-<section class="hero" id="home"><div class="frame"><div class="kicker">WITH THE BLESSINGS OF OUR FAMILIES</div><div class="arch"><div class="arch-inner"><div class="eyebrow">A ROYAL INVITATION</div><h1><span>Ajinkya</span><i>&</i><span>Mansi</span></h1><div class="flourish">❧ &nbsp; ✦ &nbsp; ❧</div><p class="tagline">Two hearts. Two families. One beautiful beginning.</p><div class="date">07 — 10 DECEMBER 2026</div><div class="place">INDORE · INDIA</div><button class="open-invite" id="invite"><small>YOUR EXCLUSIVE INVITATION</small><span class="seal">A <i>&</i> M</span><small>✦  OPEN YOUR INVITATION  ✦</small><span class="door left"></span><span class="door right"></span></button><p class="micro">A little note, sealed with love.</p></div></div></div></section>
+<section class="hero" id="home"><div class="frame"><span class="corner-star corner-star-left" aria-hidden="true">✦</span><span class="corner-star corner-star-right" aria-hidden="true">✦</span><div class="kicker">WITH THE BLESSINGS OF OUR FAMILIES</div><div class="arch"><div class="arch-inner"><div class="eyebrow">A ROYAL INVITATION</div><h1><span>Ajinkya</span><i>&</i><span>Mansi</span></h1><div class="flourish">❧ &nbsp; ✦ &nbsp; ❧</div><p class="tagline">Two hearts. Two families. One beautiful beginning.</p><div class="date">07 — 10 DECEMBER 2026</div><div class="place">INDORE · INDIA</div><button class="open-invite" id="invite"><small>YOUR EXCLUSIVE INVITATION</small><span class="seal"><b>A<i>&</i>M</b></span><small>✦  OPEN YOUR INVITATION  ✦</small><span class="door left"></span><span class="door right"></span></button><p class="micro">A little note, sealed with love.</p></div></div></div></section>
 <section class="content" id="note"><div class="eyebrow">A NOTE FROM OUR HEARTS</div><h2>Your presence would make<br>our celebration complete.</h2><p class="copy">As we step into a new chapter together, we would be grateful to have you by our side. Join our families for a few days of traditions, laughter and treasured memories. Your blessings will mean more to us than words can say.</p><p class="sign">With love,<strong>Ajinkya & Mansi</strong></p></section>
 <section class="countdown"><div class="eyebrow">UNTIL THE CELEBRATIONS BEGIN</div><div class="clock"><div><strong id="days">000</strong><small>DAYS</small></div><span>:</span><div><strong id="hours">00</strong><small>HOURS</small></div><span>:</span><div><strong id="minutes">00</strong><small>MINUTES</small></div><span>:</span><div><strong id="seconds">00</strong><small>SECONDS</small></div></div><div class="clock-foot">09 DECEMBER 2026 · 9:00 AM · INDORE</div></section>
 <section class="content" id="celebrations"><div class="eyebrow">MARK YOUR CALENDAR</div><h2>The Celebrations</h2><p class="lead">A few beautiful days, made even more special with you.</p><div class="events">
@@ -57,11 +85,12 @@ footer{text-align:center;padding:62px 20px 36px;background:#17050d;border-top:1p
 <section class="content rsvp" id="rsvp"><div class="eyebrow">YOUR PRESENCE IS OUR PRESENT</div><h2>We'll celebrate<br>with you.</h2><p class="lead">Please let us know if you'll be joining us. We can't wait to make memories together.</p><button disabled>RSVP WILL OPEN SOON ↗</button><small>A private RSVP tracker will be connected before invitations are shared.</small></section>
 <section class="content"><div class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</div><h2>Our Moments</h2><p class="lead">A gallery of the people, places and moments that make our story ours.</p><div class="gallery-row"><span>✧</span><span>❧</span><span>✦</span><span>❧</span><span>✧</span></div></section>
 </main>
+<div class="invitation-transition" id="invitation-transition" aria-hidden="true"><div class="invitation-panel"></div><div class="invitation-panel right"></div></div>
 <footer><div class="monogram">A <i>&</i> M</div><h2>Ajinkya & Mansi</h2><p>We cannot wait to celebrate with you.</p><div class="joke">Come for the love. Stay for the food. Dance like nobody's recording. (Someone probably is.)</div><small>WITH LOVE · DECEMBER 2026 · INDORE</small></footer>
 <button class="music" id="music">♫ &nbsp; Music off</button><div class="toast" id="toast"></div>
 <script>
 const $=s=>document.querySelector(s);
-$('#invite').addEventListener('click',()=>{const b=$('#invite');b.classList.toggle('open');setTimeout(()=>$('#note').scrollIntoView({behavior:'smooth'}),500)});
+$('#invite').addEventListener('click',()=>{if(document.body.classList.contains('invitation-open'))return;window.scrollTo(0,0);document.body.classList.add('invitation-open');const transition=$('#invitation-transition');transition.classList.add('active');setTimeout(()=>{transition.classList.remove('active');$('#note').scrollIntoView({behavior:'smooth'});},window.matchMedia('(prefers-reduced-motion: reduce)').matches?50:1550)});
 document.querySelectorAll('.event button').forEach(b=>b.addEventListener('click',()=>{const e=b.closest('.event'),was=e.classList.contains('open');document.querySelectorAll('.event').forEach(x=>x.classList.remove('open'));if(!was)e.classList.add('open')}));
 const target=new Date('2026-12-09T09:00:00+05:30').getTime(),pad=n=>String(n).padStart(2,'0');function tick(){let t=Math.max(0,target-Date.now()),d=Math.floor(t/864e5);t%=864e5;let h=Math.floor(t/36e5);t%=36e5;let m=Math.floor(t/6e4);t%=6e4;$('#days').textContent=String(d).padStart(3,'0');$('#hours').textContent=pad(h);$('#minutes').textContent=pad(m);$('#seconds').textContent=pad(Math.floor(t/1e3))}tick();setInterval(tick,1000);
 $('#menu').addEventListener('click',()=>$('#nav').classList.toggle('show'));$('#menu').addEventListener('click',()=>document.querySelector('.nav').classList.toggle('menu'));document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav').classList.remove('menu')));
