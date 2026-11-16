@@ -222,7 +222,7 @@ const translatedAttributes=[];
 document.querySelectorAll('[placeholder],[alt],[aria-label],[title]').forEach(el=>{for(const attr of ['placeholder','alt','aria-label','title']){const original=el.getAttribute(attr);if(original&&translations[original])translatedAttributes.push({el,attr,original,translated:translations[original]});}});
 function renderLanguage(){document.documentElement.lang=hindi?'hi':'en';document.body.classList.toggle('hindi-mode',hindi);for(const item of translatedNodes){const leading=item.original.match(/^\s*/)[0],trailing=item.original.match(/\s*$/)[0];item.node.nodeValue=leading+(hindi?item.translated:item.original.trim())+trailing;}for(const item of translatedAttributes)item.el.setAttribute(item.attr,hindi?item.translated:item.original);$('#lang').textContent=hindi?'English':'हिंदी';$('#lang').setAttribute('aria-label',hindi?'Switch to English':'हिंदी में देखें');updateMusicButton();}
 $('#lang').addEventListener('click',()=>{hindi=!hindi;renderLanguage();});
-const weddingAudio=new Audio('assets/Veena_Kinhal_-_01_-_Haratanaya_Sree(chosic.com).mp3');
+const weddingAudio=new Audio('assets/Sajdaa%20(From%20My%20Name%20Is%20Khan)%20(Instrumental)%20-%20Shankar%20Ehsaan%20Loy.mp3');
 weddingAudio.loop=true;weddingAudio.volume=0.5;weddingAudio.preload='auto';
 let musicWanted=true;
 function updateMusicButton(){const button=$('#music');button.textContent=musicWanted?(hindi?'♫  संगीत चालू':'♫  Music on'):(hindi?'♫  संगीत बंद':'♫  Music off');button.setAttribute('aria-pressed',String(musicWanted))}
