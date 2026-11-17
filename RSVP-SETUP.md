@@ -1,6 +1,6 @@
 # Connect the wedding RSVP to Google Sheets
 
-1. Create a **private** Google Sheet in your Google account, e.g. **Ajinkya & Mansi — Wedding RSVPs**.
+1. Open the **private RSVP Google Sheet already created for this wedding**: https://docs.google.com/spreadsheets/d/1ugvv4WAV1cPP8UOJaRKy3ldEYRvG3w1RADw24Uq2qMI/edit . It already has an `RSVP Responses` tab with column headers. Do not create another sheet.
 2. Open **Extensions → Apps Script**, replace the starter code with the contents of `google-apps-script-rsvp.gs`, and save.
 3. Select **Deploy → New deployment → Web app**. Set **Execute as: Me** and **Who has access: Anyone** (guest submissions must work without a Google login). Authorize the script under your Google account. Do **not** make the spreadsheet itself public.
 4. Copy the deployment URL ending in `/exec`. In `index.html`, replace `const RSVP_ENDPOINT='';` with `const RSVP_ENDPOINT='https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec';`.
