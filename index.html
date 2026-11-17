@@ -251,7 +251,7 @@ document.querySelectorAll('[placeholder],[alt],[aria-label],[title]').forEach(el
 function renderLanguage(){document.documentElement.lang=hindi?'hi':'en';document.body.classList.toggle('hindi-mode',hindi);for(const item of translatedNodes){const leading=item.original.match(/^\s*/)[0],trailing=item.original.match(/\s*$/)[0];item.node.nodeValue=leading+(hindi?item.translated:item.original.trim())+trailing;}for(const item of translatedAttributes)item.el.setAttribute(item.attr,hindi?item.translated:item.original);$('#lang').textContent=hindi?'English':'हिंदी';$('#lang').setAttribute('aria-label',hindi?'Switch to English':'हिंदी में देखें');updateMusicButton();}
 $('#lang').addEventListener('click',()=>{hindi=!hindi;renderLanguage();});
 // Google Apps Script web-app URL (paste the deployed /exec URL here once connected).
-const RSVP_ENDPOINT='';
+const RSVP_ENDPOINT='https://script.google.com/macros/s/AKfycby1qtPthymaiDyWf0MSYRl8HT0GXHtI_Mf8sc4spATrjI1oJxcHeEQOdOR5kfPXFV1R/exec';
 const rsvpForm=$('#rsvp-form'),rsvpButton=$('#rsvp-submit'),rsvpStatus=$('#rsvp-status');
 const rsvpMessages={
  en:{ready:'Send RSVP',sending:'Sending your RSVP…',success:'Thank you! Your RSVP has been received.',error:'We could not confirm your RSVP. Please try again or contact the family.',unavailable:'RSVP will open shortly. Please check back soon.',choose:'Please select at least one celebration if you are attending.'},
